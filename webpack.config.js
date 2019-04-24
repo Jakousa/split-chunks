@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack');
-const path = require('path');
 
 module.exports = {
+  output: {
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
@@ -17,7 +18,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
-    }),
-    new webpack.HotModuleReplacementPlugin(),
+    })
   ],
+  devServer: {
+    historyApiFallback: true,
+  }
 };
