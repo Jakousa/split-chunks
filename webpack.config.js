@@ -2,6 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   output: {
+    filename: 'navigation.js',
+    chunkFilename: 'app[id].js',
     publicPath: '/'
   },
   module: {
